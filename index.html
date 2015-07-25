@@ -33,13 +33,15 @@
   <title>Landing Page - Start Bootstrap Theme</title>
 </head>
 <body>
-  <div id="content"></div>
-
-  <!-- jQuery -->
-  <script src="/assets/js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="/assets/js/bootstrap.min.js"></script>
+  <div id="output">
+        
+  </div>
+  <script language="javascript" type="text/javascript" src="assets/js/jquery.js"></script>
+  <script>
+      $.getJSON('http://dota2api.herokuapp.com/tourneys', function(data){
+          $('#output').html(data.contents);
+      });
+  </script>
 
 </body>
 
