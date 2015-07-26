@@ -38,7 +38,7 @@
 
 <ul>
   <li ng-repeat="x in names">
-    {{ x.name + ', ' + x.link }}
+    {{ x.matches.team2.team_name + ', ' + x.matches.team1.team_name }}
   </li>
 </ul>
 
@@ -47,7 +47,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-  $http.get("http://dota2api.herokuapp.com/tourneys")
+  $http.get("http://dailydota2.com/match-api")
   .success(function (response) {$scope.names = response.records;});
 });
 </script>
