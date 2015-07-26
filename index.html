@@ -18,7 +18,7 @@
     return xhr;
     };
 
-    var url = 'http://dailydota2.com/match-api';
+    var url = 'http://dota2api.herokuapp.com/tourneys';
     var method = 'GET';
     var xhr = createCORSRequest(method, url);
 
@@ -38,7 +38,7 @@
 
 <ul>
   <li ng-repeat="x in names">
-    {{ x.matches.team2.team_name + ', ' + x.matches.team1.team_name }}
+    {{ x.name + ', ' + x.link }}
   </li>
 </ul>
 
@@ -47,7 +47,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-  $http.get("http://dailydota2.com/match-api")
+  $http.get("http://dota2api.herokuapp.com/tourneys")
   .success(function (response) {$scope.names = response.records;});
 });
 </script>
