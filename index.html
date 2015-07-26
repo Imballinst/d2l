@@ -33,70 +33,27 @@
   <title>Landing Page - Start Bootstrap Theme</title>
 </head>
 <body>
-  <div id="output">
-        
-  </div>
+    <div ng-app="myApp" ng-controller="customersCtrl"> 
 
-  <script language="javascript" type="text/javascript" src="assets/js/jquery.js"></script>
-  <script>
-    // Create the XHR object.
-    function createCORSRequest(method, url) {
-      var xhr = new XMLHttpRequest();
-      if ("withCredentials" in xhr) {
-        // XHR for Chrome/Firefox/Opera/Safari.
-        xhr.open(method, url, true);
-      } else if (typeof XDomainRequest != "undefined") {
-        // XDomainRequest for IE.
-        xhr = new XDomainRequest();
-        xhr.open(method, url);
-      } else {
-        // CORS not supported.
-        xhr = null;
-      }
-      return xhr;
-    }
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x.Name + ', ' + x.Country }}
+      </li>
+    </ul>
 
-    // Helper method to parse the title tag from the response.
-    function getTitle(text) {
-      return text.match('<title>(.*)?</title>')[1];
-    }
+    </div>
 
-    // Make the actual CORS request.
-    function makeCorsRequest() {
-      // All HTML5 Rocks properties support CORS.
-      var url = 'http://updates.html5rocks.com';
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+      $http.get("http://www.w3schools.com/angular/customers.php")
+      .success(function (response) {$scope.names = response.records;});
+    });
+    </script>
 
-      var xhr = createCORSRequest('GET', url);
-      if (!xhr) {
-        alert('CORS not supported');
-        return;
-      }
-
-      // Response handlers.
-      xhr.onload = function() {
-        var text = xhr.responseText;
-        var title = getTitle(text);
-        alert('Response from CORS request to ' + url + ': ' + title);
-      };
-
-      xhr.onerror = function() {
-        alert('Woops, there was an error making the request.');
-      };
-
-      xhr.send();
-    }
-  </script>
-  <script>
-    var url = 'http://dota2api.herokuapp.com/tourneys';
-    var xhr = createCORSRequest('GET', url);
-    xhr.send();
-  </script>
-  <script>
-      $.getJSON('http://dota2api.herokuapp.com/tourneys', function(data){
-          $('#output').html(data.contents);
-      });
-  </script>
-
+    <script language="javascript" type="text/javascript" src="assets/js/jquery.js"></script>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+ 
 </body>
 
 </html>
