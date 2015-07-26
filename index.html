@@ -18,7 +18,7 @@
     return xhr;
     };
 
-    var url = 'http://dota2api.herokuapp.com/tourneys';
+    var url = 'http://dailydota2.com/match-api';
     var method = 'GET';
     var xhr = createCORSRequest(method, url);
 
@@ -30,16 +30,6 @@
     // Error code goes here.
     };
 
-
-    xhr.setRequestHeader('Origin', 'http://imballinst.github.io');
-
-    xhr.setRequestHeader('Host', 'imballinst.github.io');
-
-    xhr.setRequestHeader('Accept-Language', 'en-US');
-
-    xhr.setRequestHeader('Connection', 'keep-alive');
-
-    xhr.setRequestHeader('User-Agent', 'Mozilla/5.0...');
     xhr.send();
 </script>
 <body>
