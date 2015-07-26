@@ -37,12 +37,6 @@
         
   </div>
 
-  <script>
-    var url = 'http://dota2api.herokuapp.com/tourneys';
-    var xhr = createCORSRequest('GET', url);
-    xhr.send();
-  </script>
-
   <script language="javascript" type="text/javascript" src="assets/js/jquery.js"></script>
   <script>
     // Create the XHR object.
@@ -91,6 +85,11 @@
 
       xhr.send();
     }
+  </script>
+  <script>
+    var url = 'http://dota2api.herokuapp.com/tourneys';
+    var xhr = createCORSRequest('GET', url);
+    xhr.send();
   </script>
   <script>
       $.getJSON('http://dota2api.herokuapp.com/tourneys', function(data){
