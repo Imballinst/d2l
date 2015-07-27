@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Meta Charset -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/d2l/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/d2l/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/d2l/assets/css/font-awesome.min.css">
 
+    <!-- Title -->
     <title>
         Indonesian DotA2 Tournaments Index
     </title>
@@ -18,56 +22,64 @@
 <body>
     <i class="fa fa-mars-double"></i>
 
-<div ng-app="myApp" ng-controller="customersCtrl"> 
+    <div ng-app="myApp" ng-controller="customersCtrl"> 
 
-<ul>
-  <li ng-repeat="x in names">
-    {{ x.name + ', ' + x.link }}
-  </li>
-</ul>
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x.name + ', ' + x.link }}
+      </li>
+    </ul>
 
-</div>
+    </div>
 
-<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script>
-    var createCORSRequest = function(method, url) {
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr) {
-    // Most browsers.
-    xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined") {
-    // IE8 & IE9
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-    } else {
-    // CORS not supported.
-    xhr = null;
-    }
-    return xhr;
-    };
+    <!-- Jquery and Bootstrap -->
+    <script language="javascript" type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 
-    var url = 'http://dota2api.herokuapp.com/tourneys';
-    var method = 'GET';
-    var xhr = createCORSRequest(method, url);
+    <!-- Angular JS -->
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-    xhr.onload = function() {
-    // Success code goes here.
-    };
+    <!-- Send CORS Request -->
+    <script>
+        var createCORSRequest = function(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+        // Most browsers.
+        xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+        // IE8 & IE9
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+        } else {
+        // CORS not supported.
+        xhr = null;
+        }
+        return xhr;
+        };
 
-    xhr.onerror = function() {
-    // Error code goes here.
-    };
+        var url = 'http://dota2api.herokuapp.com/tourneys';
+        var method = 'GET';
+        var xhr = createCORSRequest(method, url);
 
-    xhr.send();
-</script>
+        xhr.onload = function() {
+        // Success code goes here.
+        };
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-  $http.get("http://dota2api.herokuapp.com/tourneys")
-  .success(function (response) {$scope.names = response.tourn;});
-});
-</script>
+        xhr.onerror = function() {
+        // Error code goes here.
+        };
+
+        xhr.send();
+    </script>
+
+    <!-- Angular Http -->
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+      $http.get("http://dota2api.herokuapp.com/tourneys")
+      .success(function (response) {$scope.names = response.tourn;});
+    });
+    </script>
 
 </body>
 </html>
