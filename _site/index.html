@@ -3,7 +3,10 @@
 <head>
     <!-- Meta Charset -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Indonesian DotA2 Tournaments List">
+    <meta name="author" content="Try Ajitiono">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
@@ -48,13 +51,13 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-12"><p class="text">
-                            <div ng-app="myApp" ng-controller="customersCtrl">
+                            <div ng-app="myApp" ng-controller="tourneysCtrl">
                                 <p class="text-center" ng-hide="dataLoaded">
                                     <i class="fa fa-spinner fa-spin"></i>
                                 </p>
                                 <ul ng-show="dataLoaded">
                                     <li ng-repeat="x in names">
-                                        {{ x.name + ', ' + x.link }}
+                                        <a href="{{ x.link }}"> {{ x.name }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -122,7 +125,7 @@
     <!-- Angular Http -->
     <script>
     var app = angular.module('myApp', []);
-    app.controller('customersCtrl', function($scope, $http) {
+    app.controller('tourneysCtrl', function($scope, $http) {
         $scope.dataLoaded = false;
         $http.get("http://dota2api.herokuapp.com/tourneys")
             .success(function (response) {
