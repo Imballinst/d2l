@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+/* Header */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans';
+}
+
+/* Content */
+
+.font-size-note {
+    font-size: 10px;
+}
+
+.panel {
+    background-color: #FFE4C4;
+    padding: 15px;
+}
+
+#content {
+    padding-bottom: 75px;
+}
+
+/* Footer */
+
+#footer .navbar{
+    background-color: rgba(255,239,204,0.35);
+    font-size: 16px;
+    color: #000;
+    position: absolute;
+}
+
+.icon-margin {
+    color: #777;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.icon-margin:hover {
+    color: #DEB887;
+}
+
+/** Images **/
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.brand {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+/** Headings **/
+
+.text {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/** Page Navbar **/
+
+.navbar {
+    background: #FFDEAD;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    font-family: 'Roboto Slab';
+}
+
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-nav > li {
+  float: none;
+  display: inline-block;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #8B4513;
+}
