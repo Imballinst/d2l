@@ -48,7 +48,7 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
   $http.get("http://dota2api.herokuapp.com/tourneys")
-  .success(function (response) {$scope.names = response.records;});
+  .success(function (response) {$scope.names = response.tourn;});
 });
 </script>
 
