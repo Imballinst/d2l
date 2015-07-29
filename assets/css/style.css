@@ -99,3 +99,17 @@ img {
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
     background-color: #8B4513;
 }
+
+/* Sort Style */
+
+span.sortorder:after {
+    font-family: FontAwesome;
+    content: '\f15d';
+    color: #777;
+    text-align: right;
+}
+span.sortorder.reverse:after {
+    font-family: FontAwesome;
+    content: '\f15e';
+    color: #777;
+}

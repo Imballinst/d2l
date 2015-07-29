@@ -51,16 +51,31 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="col-md-12"><p class="text">
+                        <div class="col-md-12">
                             <div ng-app="myApp" ng-controller="tourneysCtrl">
                                 <p class="text-center" ng-hide="dataLoaded">
                                     <i class="fa fa-spinner fa-spin"></i>
                                 </p>
-                                <ul ng-show="dataLoaded">
-                                    <li ng-repeat="x in names">
-                                        <a href="{{ x.link }}"> {{ x.name }}</a>
-                                    </li>
-                                </ul>
+                                <table class="table table-hover" ng-show="dataLoaded">
+                                    <thead>
+                                        <tr>
+                                            <th>Tournament Name 
+                                                <a href="" ng-click="order('name')">
+                                                    <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                                                </a>
+                                            </th>
+                                            <th>Prize Pool</th>
+                                            <th>Slot</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="x in names | orderBy: predicate:reverse">
+                                            <td><a href="{{ x.link }}"> {{ x.name }}</a></td>
+                                            <td>Dummy 1</td>
+                                            <td>Dummy 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -133,6 +148,13 @@
                 $scope.names = response.tourn;
                 $scope.dataLoaded = true;
             });
+
+        $scope.predicate = 'name';
+        $scope.reverse = false;
+        $scope.order = function(predicate) {
+            $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+            $scope.predicate = predicate;
+        };
     });
     </script>
 
