@@ -56,11 +56,11 @@
                                 <p class="text-center" ng-hide="dataLoaded">
                                     <i class="fa fa-spinner fa-spin"></i>
                                 </p>
-                                <table class="table table-hover" ng-show="dataLoaded">
-                                    <thead>
+                                <table class="table table-bordered" ng-show="dataLoaded">
+                                    <thead class="text-white-header">
                                         <tr>
                                             <th>Tournament Name 
-                                                <a href="" ng-click="order('name')">
+                                                <a class="sort-table" href="" ng-click="order('name')">
                                                     <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
                                                 </a>
                                             </th>
@@ -68,9 +68,9 @@
                                             <th>Slot</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-white-body">
                                         <tr ng-repeat="x in names | orderBy: predicate:reverse">
-                                            <td><a href="{{ x.link }}"> {{ x.name }}</a></td>
+                                            <td><a class="text-white-link" href="{{ x.link }}"> {{ x.name }}</a></td>
                                             <td>Dummy 1</td>
                                             <td>Dummy 2</td>
                                         </tr>

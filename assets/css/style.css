@@ -24,7 +24,7 @@ body {
 }
 
 .panel {
-    background-color: #FFE4C4;
+    background-color: #7B6B67;
     padding: 15px;
 }
 
@@ -78,7 +78,7 @@ img {
 /** Page Navbar **/
 
 .navbar {
-    background: #FFDEAD;
+    background: #2B1B17;
     border: 0;
     border-radius: 0;
     padding: 0;
@@ -97,19 +97,38 @@ img {
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #8B4513;
+    background-color: #17272B;
 }
 
-/* Sort Style */
+/* Table and Sort Style */
+
+th {
+    text-align: center;
+}
+
+.text-white-header {
+    color: #FFF;
+}
+
+.text-white-body,
+.text-white-link,
+a.sort-table {
+    color: #EBEBEB;   
+}
+
+a.text-white-link:hover,
+a.sort-table:hover {
+    color: #F9F8F6;
+    text-decoration: none;
+}
 
 span.sortorder:after {
     font-family: FontAwesome;
     content: '\f15d';
-    color: #777;
-    text-align: right;
+    float: right;
 }
 span.sortorder.reverse:after {
     font-family: FontAwesome;
     content: '\f15e';
-    color: #777;
+    float: right;
 }
