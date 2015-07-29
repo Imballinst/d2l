@@ -56,8 +56,8 @@
                                 <p class="text-center" ng-hide="dataLoaded">
                                     <i class="fa fa-spinner fa-spin"></i>
                                 </p>
-                                <table class="table table-bordered" ng-show="dataLoaded">
-                                    <thead class="text-white-header">
+                                <table class="table table-bordered table-border-black" ng-show="dataLoaded">
+                                    <thead class="text-header">
                                         <tr>
                                             <th>Tournament Name 
                                                 <a class="sort-table" href="" ng-click="order('name')">
@@ -68,9 +68,9 @@
                                             <th>Slot</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-white-body">
+                                    <tbody class="text-body">
                                         <tr ng-repeat="x in names | orderBy: predicate:reverse">
-                                            <td><a class="text-white-link" href="{{ x.link }}"> {{ x.name }}</a></td>
+                                            <td><a class="text-link" href="{{ x.link }}"> {{ x.name }}</a></td>
                                             <td>Dummy 1</td>
                                             <td>Dummy 2</td>
                                         </tr>
@@ -86,7 +86,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="text-white-footer text-center">
+            <p class="text-footer text-center">
                 &copy; Try Ajitiono 2015<br>
                 <a href="https://www.facebook.com/ajiballinst"><i class="fa fa-facebook icon-margin"></i></a>
                 <a href="https://twitter.com/ajiballinst"><i class="fa fa-twitter icon-margin"></i></a>

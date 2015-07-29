@@ -24,7 +24,7 @@ body {
 }
 
 .panel {
-    background-color: #7B6B67;
+    background-color: #D1D0CE;
     padding: 15px;
 }
 
@@ -41,7 +41,7 @@ body {
     position: absolute;
 }
 
-.text-white-footer {
+.text-footer {
     color: #fff;
 }
 
@@ -78,7 +78,10 @@ img {
 /** Page Navbar **/
 
 .navbar {
-    background: #2B1B17;
+    background: -webkit-linear-gradient(#000, #222824); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#000, #222824); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#000, #222824); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#000, #222824); /* Standard syntax */
     border: 0;
     border-radius: 0;
     padding: 0;
@@ -97,28 +100,33 @@ img {
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #17272B;
+    background-color: #000;
 }
 
 /* Table and Sort Style */
+
+.table-border-black, .table-border-black > tbody > tr > td, .table-border-black > thead > tr > th {
+    border-color: #000;
+    border-radius: 50px;
+}
 
 th {
     text-align: center;
 }
 
-.text-white-header {
-    color: #FFF;
+.text-header {
+    color: #000;
 }
 
-.text-white-body,
-.text-white-link,
+.text-body,
+.text-link,
 a.sort-table {
-    color: #EBEBEB;   
+    color: #000;
 }
 
-a.text-white-link:hover,
+a.text-link:hover,
 a.sort-table:hover {
-    color: #F9F8F6;
+    color: #777;
     text-decoration: none;
 }
 
